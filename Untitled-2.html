@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        nav {
+            background: #333;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Resume</a>
+            <a href="biodata.html">Bio-data</a>
+        </nav>
+
+        <!-- Resume Page (index.html) -->
+        <div class="section">
+            <h1>Tameem Ulla</h1>
+            <h3>Software Developer</h3>
+            
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <p>Experienced software developer with expertise in web development and cloud technologies.</p>
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <div class="skills">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">jQuery</span>
+                    <span class="skill-tag">React</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <h3>BE in Computer Science</h3>
+                <p>RV Institute Of Technology And Management, 2022-2026</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to nav links
+            $('nav a').on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800);
+                }
+            });
+
+            // Add hover effects to sections
+            $('.section').hover(
+                function() {
+                    $(this).css('transform', 'scale(1.01)');
+                },
+                function() {
+                    $(this).css('transform', 'scale(1)');
+                }
+            );
+        });
+    </script>
+</body>
+</html>
+
+<!-- Bio-data Page (biodata.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-data</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .personal-info {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+        }
+        .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Resume</a>
+            <a href="biodata.html">Bio-data</a>
+        </nav>
+
+        <div class="section">
+            <h1>Personal Bio-data</h1>
+            
+            <div class="personal-info">
+                <div>Full Name:</div>
+                <div>Tameem Ulla</div>
+                
+                <div>Date of Birth:</div>
+                <div>May 16, 2004</div>
+                
+                <div>Place of Birth:</div>
+                <div>Maddur, Karnataka</div>
+                
+                <div>Nationality:</div>
+                <div>Indian</div>
+                
+                <div>Languages Known:</div>
+                <div>English, Kannada, Hindi, Urdu</div>
+                
+                <div>Marital Status:</div>
+                <div>Single</div>
+                
+                <div>Blood Group:</div>
+                <div>O+ve</div>
+                
+                <div>Address:</div>
+                <div>River Street, Maddur, Mandya- 571428</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hobbies & Interests</h2>
+            <ul>
+                <li>Programming</li>
+                <li>Travelling</li>
+                <li>Sports</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.personal-info div:nth-child(odd)').css('font-weight', 'bold');
+            
+            // Add fade-in animation for sections
+            $('.section').hide().fadeIn(1000);
+        });
+    </script>
+</body>
+</html>
